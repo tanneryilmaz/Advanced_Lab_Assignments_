@@ -2,9 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def linreg(x, y, err_y, deg_of_freedom, xlabel, ylabel, plot_title):
-    '''
-    This function plots the line of best fit, and returns an numpy array of the linear coefficients and their errors
-    '''
+    
     delta = sum(1/err_y**2) * sum(x**2/err_y**2) - (sum(x/err_y**2))**2
     m = (sum(1/err_y**2) * sum(x*y/err_y**2) - sum(x/err_y**2) * sum(y/err_y**2)) / delta
     b = (sum(x**2/err_y**2) * sum(y/err_y**2) - sum(x/err_y**2) * sum(x*y/err_y**2)) / delta
